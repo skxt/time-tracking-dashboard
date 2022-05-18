@@ -2,7 +2,7 @@
     --color-blue: hsl(246, 80%, 60%);
     --color-lightred: hsl(15, 100%, 70%);
     --color-softblue: hsl(195, 74%, 62%);
-    --color-lightred: hsl(348, 100%, 68%);
+    --color-red: hsl(348, 100%, 68%);
     --color-limegreen: hsl(145, 58%, 55%);
     --color-violet: hsl(264, 64%, 52%);
     --color-softorange: hsl(43, 84%, 65%);
@@ -10,10 +10,15 @@
     --color-darkblue: hsl(235, 46%, 20%);
     --color-desaturatedblue: hsl(235, 45%, 61%);
     --color-paleblue: hsl(236, 100%, 87%);
+    --height-100: 100vh;
+    --height-footer: 100px;
+    --h-card: 200px;
+    --h-badge: 50px;
 }
 
 *, html {
     box-sizing: border-box;
+    transition: ease 0.3s;
 }
 body {
     font-family: 'Rubik', sans-serif;
@@ -28,33 +33,99 @@ main {
     min-height: 100vh;
     width: 100%;
     position: relative;
+    display: block;
 }
 .area {
+    height: calc(var(--height-100) - var(--height-footer));
     display: flex;
-    gap: 20px;
+    gap: 50px 30px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 .user {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px 30px;
     align-items: flex-start;
     max-width: 680px;
     max-height: 420px;
 }
 .resume-user {
     display: flex;
-    gap: 20px;
     align-items: flex-start;
 }
 .card {
-    height: 200px;
-    width: 200px;
-    background-color: var(--color-blue);
+    height: calc(var(--h-card));
+    width: var(--h-card);
+    background-color: var(--color-darkblue);
     border-radius: 15px;
     flex-grow: 0;
 }
-.resume-user .card:nth-child(1){
-    height: 420px;
+.user .card:before {
+    content: '';
+    height: var(--h-badge);
+    width: inherit;
+    display: inline-block;
+    border-radius: 15px;
+}
+.card:hover {
+    opacity: 0.8;
+}
+.user .card:nth-child(1):before {
+    -webkit-box-shadow: 0px -25px 0px 0px var(--color-lightred);
+    -moz-box-shadow: 0px -25px 0px 0px var(--color-lightred);
+    -o-box-shadow: 0px -25px 0px 0px var(--color-lightred);
+    box-shadow: 0px -25px 0px 0px var(--color-lightred);
+}
+.user .card:nth-child(2):before {
+    -webkit-box-shadow: 0px -25px 0px 0px var(--color-softblue);
+    -moz-box-shadow: 0px -25px 0px 0px var(--color-softblue);
+    -o-box-shadow: 0px -25px 0px 0px var(--color-softblue);
+    box-shadow: 0px -25px 0px 0px var(--color-softblue);
+}
+.user .card:nth-child(3):before {
+    -webkit-box-shadow: 0px -25px 0px 0px var(--color-red);
+    -moz-box-shadow: 0px -25px 0px 0px var(--color-red);
+    -o-box-shadow: 0px -25px 0px 0px var(--color-red);
+    box-shadow: 0px -25px 0px 0px var(--color-red);
+}
+.user .card:nth-child(4):before {
+    -webkit-box-shadow: 0px -25px 0px 0px var(--color-limegreen);
+    -moz-box-shadow: 0px -25px 0px 0px var(--color-limegreen);
+    -o-box-shadow: 0px -25px 0px 0px var(--color-limegreen);
+    box-shadow: 0px -25px 0px 0px var(--color-limegreen);
+}
+.user .card:nth-child(5):before {
+    -webkit-box-shadow: 0px -25px 0px 0px var(--color-violet);
+    -moz-box-shadow: 0px -25px 0px 0px var(--color-violet);
+    -o-box-shadow: 0px -25px 0px 0px var(--color-violet);
+    box-shadow: 0px -25px 0px 0px var(--color-violet);
+}
+.user .card:nth-child(6):before {
+    -webkit-box-shadow: 0px -25px 0px 0px var(--color-softorange);
+    -moz-box-shadow: 0px -25px 0px 0px var(--color-softorange);
+    -o-box-shadow: 0px -25px 0px 0px var(--color-softorange);
+    box-shadow: 0px -25px 0px 0px var(--color-softorange);
+}
+.resume-user .card {
+    height: calc((var(--h-card) * 2) + var(--h-badge) + 25px);
+    margin-top: 5px;
+    
+}
+.profile {
+    position: inherit;
+    background-color: var(--color-blue);
+    height: 300px;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    align-items: flex-start;
+    border-radius: 15px;
+}
+
+footer {
+    height: var(--height-footer);
 }
 .attribution {
     font-size: 11px;
