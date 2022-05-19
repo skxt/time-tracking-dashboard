@@ -42,6 +42,19 @@ h2 {
     font-size: 1.6em;
     font-weight: 300;
 }
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    font-size: 1rem;
+}
+a {
+    color: var(--color-desaturatedblue);
+}
+a:hover, a:focus, a:active {
+    color: white;
+}
 .area {
     height: calc(var(--height-100) - var(--height-footer));
     display: flex;
@@ -135,6 +148,7 @@ h2 {
     display: flex;
     flex-direction: column;
 }
+
 .resume-user span {
     font-size: 0.8rem;
     color: var(--color-paleblue);
